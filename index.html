@@ -52,15 +52,25 @@
             display: none;
         }
 
-        .process-list .process-item:not(:last-child) {
-            position: relative;
+        .process-list::before {
+            content: '';
+            position: absolute;
+            background: var(--primary);
+            width: 3px;
+            height: 80%;
+            left: 39px;
+            z-index: 0;
         }
+
+        /* .process-list .process-item:not(:last-child) {
+            position: relative;
+        } */
 
         .process-list .process-item .process-icon {
             z-index: 1;
         }
 
-        .process-list .process-item:not(:last-child)>.process-icon::after {
+        /* .process-list .process-item:not(:last-child)>.process-icon::after {
             content: '';
             position: absolute;
             background: var(--primary);
@@ -69,7 +79,7 @@
             bottom: -47px;
             left: 39px;
             z-index: -1;
-        }
+        } */
     </style>
 
     <title>LA'ROSE</title>
@@ -344,7 +354,7 @@
                         locations
                         are still experiencing COVID related shipping delays. Please allow extra time for shipping</p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" style="position: relative;">
                     <h5 class="text-uppercase mt-5">our process</h5>
                     <div class="process-list d-flex flex-column gap-4 mt-3">
                         <div class="process-item d-flex align-items-center gap-3">
